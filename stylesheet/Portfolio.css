@@ -1,0 +1,416 @@
+/* BODY */
+body {
+	margin: 0%; /* This ensures our site displays all the way to the edge of the browser screen */
+	opacity: 1; /* This and transition affect the page loading fade in effect */
+    transition: 3s opacity; /* This causes a 3 second fade in, you can change this time if you choose */
+	letter-spacing: .2vw;
+}
+
+body.fade-out {
+    opacity: .1; /* This sets the level of opacity at the start of page load */
+    transition: none;
+}
+
+/* Navbar */
+.dropbtn {
+    font-weight: 1000;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: black;
+    color: white;
+    padding: 18px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-dropdown {
+    position: fixed;
+    display: inline-block;
+    z-index: 1;
+    top: 53px;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #a1a1a1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    font-weight: 700;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {background-color: #f1f1f1}
+  
+.nav-dropdown:hover .dropdown-content {
+	display: block;
+}
+  
+
+  
+/* This animation effect causes the overlay video text to move up from the bottom of the page upon page load */
+@keyframes movevideoText {
+	from {top: -100vw;}
+	to {top: 0px;}
+}
+
+@keyframes zoominoutsinglefeatured {
+	0% {
+        transform: scale(1.5,1.5);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+/* Video */
+#Typing_Video {
+	position: fixed; /* This fixes our video to the page  */
+	right: 0; /* This ensures no space between the edge of the video and the edge of the page */
+	bottom: 0; /* This ensures no space between the edge of the video and the edge of the page */
+	min-width: 100%; /* This ensures the video is displayed across the full width of the page */
+	z-index: -1;
+	animation: zoominoutsinglefeatured 5s;
+}
+
+/* Text over the video */ 
+.Video_Text { 
+	background: rgba(0, 0, 0, 0.5); /* This provides a semi-transparent background for the text to sit over */
+	color: white; 
+	width: 100%;
+	padding: 20px; /* This adds padding around the text so that the background goes slightly beyond the text */
+	margin-top: 23%;
+	position: relative;
+	-webkit-animation: moveNav 4s; /* Safari 4.0 - 8.0 */
+    animation: movevideoText 4s;
+}
+
+/* Slideshow Styling */
+#Slideshow_Background {
+	background:rgba(255,255,255, 0.35); /* This creates a slightly transparent white background that's placed over the video */
+	}
+  
+  
+.mySlides {
+	  display: none;
+}
+  
+@-webkit-keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+  
+@keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+  
+/* Slideshow section / container */
+#Slideshow_Container {
+	width: 39.5vw;
+	height: auto;
+	padding-top: 4%;
+	position: relative;
+	margin: auto;
+  
+}
+  
+/* Images contained within slideshow */
+.Slide_Show_Images {
+	vertical-align: middle;
+	height: auto;
+	box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75);
+	width: auto;
+}
+  
+  
+/* Next and previous buttons */
+.Previous, .Next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 2vw;
+	margin-top: -0vw;
+	color: darkgray;
+	font-weight: bold;
+	font-size: 1.5vw;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	transition: 0.6s ease;
+}
+  
+/* Positioning the right-hand next button */
+.Next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+  
+/* Hover effect on slide show buttons */
+.Previous:hover, .Next:hover {
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+}
+  
+/* Slideshow text */
+.text {
+	color: white;
+	padding: 1vw;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	font-family: Perpetua, Rockwell Extra Bold;
+	letter-spacing: .1vw; 
+	font-size: 1.5vw;
+	background-color: rgba(0,0,0,0.75);
+	font-weight: bold;
+	border-radius: 7px 7px 7px 7px;
+}
+
+/* Number text (1/6, 2/6, etc.) - we have set this display to none, which means these are hidden */
+.Slide_Number {
+	color: white;
+	position: absolute;
+	top: 0;
+	font-family: Perpetua, Rockwell Extra Bold;
+	letter-spacing: .1vw; 
+	font-size: 1.5vw;
+	font-weight: bold;
+	display: none;
+	}
+  
+  /* The dots under the slideshow */
+.dot {
+	cursor: pointer;
+	height: 1vw;
+	width: 1vw;
+	margin: .25vw;
+	background-color: white;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+	position: relative;
+	z-index: 1;
+}
+
+/* Hover effect for slideshow dots */ 
+.active, .dot:hover {
+	background-color: black;
+}
+  
+  /* Fading animation for slideshow */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;  
+}
+
+.Video_Text h1 {
+    color: #66fcf1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Video_Text q {
+    font-size: 30px;
+}
+
+
+/* Table - this section covers the styling of the columns and rows within our table */
+* { /* The asterisk is a universal selector that applies this effect to all elements on the page */
+	box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
+}
+
+.Column_1 {
+	float: left;  
+	width: 50%; /* This ensures one column takes up half the page width */
+	padding: 10px; 
+	padding-top: 2%; /* This ensures there is space between the top of the column and our headings */
+	height: 400px; /* This sets the height of our column at 400 pixels - if you change the text within the columns, you will need to adjust the column heights accordingly */
+	background-color:#66fcf1; 
+}
+
+.Column_2 {
+	float: left;
+	width: 50%;
+	padding: 10px;
+	padding-top: 1.9%;
+	height: 400px;
+	background-color: #1f2833;
+}
+
+.Column_3 {
+	float: left;
+	width: 50%;
+	padding: 10px;
+	padding-top: 2%;
+	height: 400px;
+	background-color: #1f2833;
+}
+
+.Row:after { /* This inserts something after the content of selected elements */
+	content: ""; /* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
+	display: table; /* The display property specifies the type of display behavior; the table value tells the browser to treat the element as a table */
+	clear: both; /* This clears any other elements from floating on the left or the right of an element */
+}
+
+/* Heading 1 elements */
+h1 {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	text-align: center;
+	margin-top: 2%; /* We are adding a small margin above the headings */
+	color: #000000;
+}
+
+/* Paragraph elements */
+p {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-align: justify;
+	letter-spacing: 1px; /* This expands the text slightly */
+	font-size: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* Center align elements - this embraces all centered text */
+center {
+	text-align: center;
+	letter-spacing: 1px;
+    font-size: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* Anchor elements */
+a {
+	color: blue; /* We are ensuring all links are blue */
+}
+
+/* Image elements */
+img {
+	filter: grayscale(75%); /* This rids our pictures of 75% of their color */
+    border-radius: 8px; /* This causes our images to have slightly rounded edges */
+    max-width: 100%; 
+    height: 340px; 
+	margin-left: auto; /* This in combination with margin-right: auto centers our images */
+    margin-right: auto;
+	display: block;	/* By specifying block display we can ensure our images are able to be centered */
+}
+
+/* Image element hover effects */
+img:hover {
+	filter: grayscale(5%);  /* Brings back most of the image's color when hovered over */
+    transition: transform 1s;
+	transform: scale(1.1);
+}
+
+/* Contact form styling */
+
+/* Makes contact form button slide in from right on page load */
+@keyframes movePopup {
+  from {right: -40vw;}
+  to {bottom: 1.75vw;}
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.Pop_Up_Button {
+  bottom: 1.75vw;
+  right: 1.75vw;
+  width: 25vw;  
+  background-color: white;
+  color: black;
+  border: solid;
+  cursor: pointer;
+  position: fixed;
+  -webkit-animation: movePopup 5s;
+  animation: movePopup 5s;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  border: 3px solid #f0f1f0;
+  z-index: 8;
+  display: none;
+  position: fixed;
+  bottom: 6px;
+  right: 6px;
+}
+
+/* Form styling */
+.form-container {
+  max-width: 49vw;
+  padding: 9px;
+  background-color: white;
+}
+
+/* Input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: .93vw;
+  margin: .6vw 0 .6vw 0;
+  border: none;
+  background: Gainsboro;
+  font-family: Helvetica, Avant Garde;
+  font-size: 1vw; 
+}
+
+/* Submit button */
+.form-container .btn {
+  background-color: white;
+  color: black;
+  border-color: black;
+  margin-bottom:1vh;
+}
+
+/* Close button */
+.form-container .cancel {
+  background-color: black;
+  color: white;
+  border-color: gray;
+}
+
+/* Button styling */
+button {
+  font-family: "Trebuchet MS", Optima; 
+  letter-spacing: .3vw; 
+  font-size: 1.5vw;
+  font-weight: bold;
+  padding: 1.5vw 1.5vw;
+  border-style: solid;
+  cursor: pointer;
+  height: auto;
+}
+
+/* Hover effect for buttons */
+button:hover, .form-container .btn:hover{
+  color: white;
+  background-color: black;
+  -webkit-transition-duration: 1s; 
+  transition-duration: 1s;
+  border-style: solid;
+  border-color: silver;
+}
+.form-container .cancel:hover{
+  color: white;
+  background-color: darkred;
+  -webkit-transition-duration: 1s; 
+  transition-duration: 1s;
+  border-style: solid;
+  border-color: black;
+}	
+
+/* Footer element */
+footer {
+	padding: 2%;
+	background-color:white;
+}
